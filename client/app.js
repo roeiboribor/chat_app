@@ -1,11 +1,11 @@
-const socket = new WebSocket('ws://localhost:3000');
+const socket = io('ws://localhost:3500');
 
 const sendMessage = (e) => {
     e.preventDefault();
     const messageEl = document.querySelector('#message');
 
     if (messageEl.value) {
-        socket.send(messageEl.value);
+        socket.emit('message', messageEl.value);
         // Reset message box
         messageEl.value = "";
     }
@@ -18,7 +18,7 @@ document.querySelector('form')
 
 // Listen For Messages
 
-socket.addEventListener("message", ({ data }) => {
+socket.on("message", (data) => {
     const li = document.createElement('li');
     li.textContent = data;
     document.querySelector('#message-list').appendChild(li);
