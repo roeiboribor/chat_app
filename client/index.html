@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chat Application - Web Sockets</title>
+		<link rel="stylesheet" href="style.css" />
+		<!-- Defer means load dom before load javascript -->
+		<script defer src="app.js"></script>
+	</head>
+	<body>
+		<form>
+			<input
+				id="message"
+				type="text"
+				name="message"
+				placeholder="Your message..."
+			/>
+			<button type="submit">Send</button>
+		</form>
+		<ul id="message-list"></ul>
+	</body>
+</html>
